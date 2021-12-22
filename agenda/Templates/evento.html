@@ -1,0 +1,25 @@
+{% extends 'model-page.html' %}
+
+
+{% block content %}
+
+<h2>Compromisso</h2>
+
+<form action="submit" method="POST">{% csrf_token %}
+    <label>Título</label>
+    <input type="number" name="registro" value="{{evento.id}}" hidden>
+    <br>
+    <input type="text" name="titulo" size="23" value="{{evento.titulo}}"> <br>
+    <br>
+    <label> Data do Evento</label> <br>
+    <input type="datetime-local" name="data_evento" value="{{evento.mostraData}}">
+    <br>
+    <textarea name="descricao" rows="5" cols="24">{{evento.descricao}}</textarea> <br>
+    <br>
+    <button type="submit">Salvar</button>
+    <a href="/">
+        <button type="button">Cancelar</button>
+    </a>
+</form>
+
+{% endblock %}

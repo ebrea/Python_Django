@@ -1,0 +1,21 @@
+
+{% extends 'model-page.html' %}
+
+{% block content %}
+    <h2 style="color: red">Agendamentos</h2>
+    <a href="evento/">
+        <button type="button">Novo Evento</button>
+    </a>
+    <u1 style='font-size: 20px'>       <!-- tamanho da letra -->
+        {% for evento in eventos %}
+                <li style= {% if evento.passados %}
+                               "color:red"
+                            {% endif %}>
+                    {{evento.titulo }} =>  {{evento.dataEvento}} - {{evento.usuario}}
+                    ( <a href="evento/?id={{ evento.id }}">Editar </a>
+                    / <a href="evento/delete/{{ evento.id }}/">Excluir</a> )
+                </li>
+        {% endfor %}
+    </u1>
+
+{% endblock %}
