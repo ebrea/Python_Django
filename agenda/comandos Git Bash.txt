@@ -1,0 +1,13 @@
+
+$ git remote add origin https://github.com/ebrea/Python_Django.git
+
+$ git status
+
+$ git add .
+
+$ git commit -m "Commit de uma pequena Agenda de Compromissos desenvolvida com a biblioteca Django do Python"
+
+$ git push origin master
+
+
+
